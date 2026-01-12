@@ -105,14 +105,120 @@ function t11() {
 
 // 12
 
-const input121 = document.querySelector(".i-12-1");
-const input122 = document.querySelector(".i-12-2");
+const input12_1 = document.querySelector(".i-12-1");
+const input12_2 = document.querySelector(".i-12-2");
 const btn12 = document.querySelector(".b-12");
 const out12 = document.querySelector(".out-12");
 
 btn12.onclick = t12;
 
 function t12() {
-  out11.textContent = "Hello" + input121.value;
-  input11.value = "";
+  out12.textContent = `Hello ${input12_1.value} ${input12_2.value}`;
+  input12_1.value = "";
+  input12_2.value = "";
+}
+
+// 13
+
+const input13_1 = document.querySelector(".i-13-1");
+const input13_2 = document.querySelector(".i-13-2");
+const btn13 = document.querySelector(".b-13");
+const out13 = document.querySelector(".out-13");
+
+btn13.onclick = t13;
+
+function t13() {
+  const a = +input13_1.value;
+  const b = +input13_2.value;
+  out13.textContent = a + b;
+}
+
+// 14
+
+const input14 = document.querySelector(".i-14");
+const btn14 = document.querySelector(".b-14");
+
+btn14.onclick = t14;
+
+function t14() {
+  input14.value = "Go";
+}
+
+// 15
+
+const input15 = document.querySelector(".i-15");
+const btn15 = document.querySelector(".b-15");
+
+btn15.onclick = t15;
+
+function t15() {
+  input15.style.border = "4px solid red";
+}
+
+// 16
+
+const input16_1 = document.querySelector(".i-16-1");
+const input16_2 = document.querySelector(".i-16-2");
+const btn16 = document.querySelector(".b-16");
+const out16 = document.querySelector(".out-16");
+
+btn16.onclick = t16;
+
+function t16() {
+  const result = input16_1.value + input16_2.value;
+  out16.textContent = result;
+}
+
+// 17
+
+const input17 = document.querySelector(".i-17");
+const btn17 = document.querySelector(".b-17");
+const out17_1 = document.querySelector(".out-17-1");
+const out17_2 = document.querySelector(".out-17-2");
+const out17_3 = document.querySelector(".out-17-3");
+
+btn17.onclick = t17;
+
+function t17() {
+  out17_1.textContent = parseFloat(input17.value);
+}
+
+// 18
+
+const input18 = document.querySelector(".i-18");
+const btn18 = document.querySelector(".b-18");
+const out18 = document.querySelector(".out-18");
+
+btn18.onclick = t18;
+
+function t18() {
+  const a = parseFloat(+input18.value);
+  out18.textContent = a;
+}
+
+// 19
+
+const input19_1 = document.querySelector(".i-19-1");
+const input19_2 = document.querySelector(".i-19-2");
+const btn19 = document.querySelector(".b-19");
+const out19 = document.querySelector(".out-19");
+
+btn19.onclick = t19;
+
+function t19() {
+  const result1 = +input19_1.value + +input19_2.value;
+  out19.textContent = result1;
+}
+
+// 20
+
+const btn20 = document.querySelector(".b-20");
+const out20 = document.querySelector(".out-20");
+let result2 = 0;
+btn20.onclick = t20;
+
+function t20() {
+  // result2 = result2 + 1;
+  // out20.textContent = result2;
+  out20.textContent = ++result2;
 }
