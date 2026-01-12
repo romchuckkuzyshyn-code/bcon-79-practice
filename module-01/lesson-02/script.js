@@ -91,3 +91,28 @@ function fn10() {
 }
 
 // 11
+
+const input11 = document.querySelector(".i-11");
+const btn11 = document.querySelector(".b-11");
+const out11 = document.querySelector(".out-11");
+
+btn11.onclick = t11;
+
+function t11() {
+  out11.textContent = +input11.value + 55;
+  input11.value = "";
+}
+
+// 12
+
+const input121 = document.querySelector(".i-12-1");
+const input122 = document.querySelector(".i-12-2");
+const btn12 = document.querySelector(".b-12");
+const out12 = document.querySelector(".out-12");
+
+btn12.onclick = t12;
+
+function t12() {
+  out11.textContent = "Hello" + input121.value;
+  input11.value = "";
+}
