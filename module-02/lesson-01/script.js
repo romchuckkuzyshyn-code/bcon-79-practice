@@ -203,8 +203,8 @@ const out12 = document.querySelector(".out-12");
 btn12.onclick = f12;
 
 function f12() {
-  //   const value = input120.value;
-  out12.textContent = typeof input120;
+  const value = input120.value;
+  out12.textContent = typeof value;
 }
 
 // Task 13
