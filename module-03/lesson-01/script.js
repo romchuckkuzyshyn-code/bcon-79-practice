@@ -270,6 +270,53 @@ function f17() {
 
 // Task-18
 
+const ar18 = [15, 24, 13, 78, 21, 4, 45, 67];
+const btn18 = document.querySelector(".b-18");
+const out18 = document.querySelector(".out-18");
+
+btn18.onclick = f18;
+
+function f18() {
+  let max = ar18[0];
+  for (let i = 1; i < ar18.length; i++) {
+    const element = ar18[i];
+    if (element > max) {
+      max = element;
+    }
+  }
+  out18.textContent = max;
+}
+
 // Task-19
 
+const ar19 = [15, 424, 313, 78, 241, 4, 45, 67];
+const btn19 = document.querySelector(".b-19");
+const out19 = document.querySelector(".out-19");
+
+btn19.onclick = f19;
+
+function f19() {
+  let min = ar18[0];
+  for (let i = 1; i < ar19.length; i++) {
+    const element = ar19[i];
+    if (element < min) {
+      min = element;
+    }
+  }
+  out19.textContent = min;
+}
 // Task-20
+
+const ar20 = [4, 5, 6, 7, 8, 9, 10];
+const btn20 = document.querySelector(".b-20");
+const out20 = document.querySelector(".out-20");
+
+btn20.onclick = fn20;
+
+function fn20() {
+  let result = 0;
+  for (let i = 0; i < ar20.length; i++) {
+    result += ar20[i];
+  }
+  out20.textContent = result;
+}
