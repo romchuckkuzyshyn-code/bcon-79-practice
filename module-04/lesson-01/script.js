@@ -208,7 +208,7 @@ function f10(obj, value) {
   return false;
 }
 btn10.onclick = function () {
-  out10.textContent = f10(obj10, 54);
+  out10.textContent = f10(obj10, 1);
 };
 
 // TODO: Значення для перевірки 22
@@ -295,9 +295,7 @@ const obj14 = {
 const btn14 = document.querySelector(".b-14");
 const out14 = document.querySelector(".out-14");
 
-btn14.onclick = f14;
-
-function f14() {
+btn14.onclick = () => {
   let result = "";
 
   for (const key in obj14) {
@@ -305,7 +303,7 @@ function f14() {
   }
 
   out14.textContent = result;
-}
+};
 
 // Task 15
 const obj15 = {
@@ -412,6 +410,32 @@ const obj19 = {
   blue: ["Minska", "Obolon", "Pochaina", "Holosiivska"],
   green: ["Syrets", "Zoloti Vorota", "Klovska", "Vidubichi"],
 };
+const btn19 = document.querySelector(".b-19");
+const out19 = document.querySelector(".out-19");
+const input19 = document.querySelector(".i-19");
+
+btn19.onclick = f19;
+
+function f19() {
+  let result = "";
+  const value = input19.value; // .toLowerCase()
+  for (const key in obj19) {
+    if (obj19[key].includes(value)) {
+      result = `${key}`;
+    }
+  }
+  out19.innerHTML = result;
+}
+
+// for (const obj in obj19) {
+//   const normalizeInput =
+//     i19.value[0].toUpperCase() + i19.value.slice(1).toLowerCase();
+//   if (obj19[obj].includes(normalizeInput)) {
+//     out19.textContent = obj;
+//     return;
+//   }
+//   out19.textContent = "";
+// }
 
 // Task 20
 const obj20 = {
