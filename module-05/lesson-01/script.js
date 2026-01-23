@@ -41,6 +41,17 @@ btn3.onclick = () => {
 };
 // Task 4
 
+// const out4 = document.querySelector(".out-4");
+// fn4();
+
+// function fn4() {
+//   const sp = document.querySelector(".task-4");
+//   const arr4 = [];
+//   sp.forEach(element => {
+//     arr4.push(element.dataset.value);
+//   });
+//   out4.textContent = arr4;
+// }
 // Task 5
 
 // Task 6
@@ -114,7 +125,6 @@ btn11.onclick = fn11;
 
 function fn11() {
   const arr11_res = arr11.map(number => number * 2);
-
   out11.textContent = arr11_res;
 }
 // Task 12
@@ -137,17 +147,47 @@ btn13.onclick = fn13;
 
 function fn13() {
   const arr13_res = arr13.map(Number);
+  // console.log("🚀 ~ fn13 ~ arr13_res:", arr13_res);
   out13.textContent = arr13_res;
-  console.log("🚀 ~ fn13 ~ arr13_res:", arr13_res);
 }
 // Task 14
 const arr14 = [4, "3", 6, 7, "12", 34, "56", 78, 90, 11];
+const btn14 = document.querySelector(".b-14");
+const out14 = document.querySelector(".out-14");
+
+btn14.onclick = fn14;
+
+function fn14() {
+  const arr14_res = arr14.filter(num => typeof num === "number");
+  out14.textContent = arr14_res;
+  // console.log("🚀 ~ fn14 ~ arr14_res:", arr14_res);
+}
 
 // Task 15
 const arr15 = [3, 14, 15, 92, "6"];
+const btn15 = document.querySelector(".b-15");
+const out15 = document.querySelector(".out-15");
+
+btn15.onclick = fn15;
+
+function fn15() {
+  const arr15_res = arr15.filter(
+    num => typeof num === "number" && num % 2 === 0
+  );
+  out15.textContent = arr15_res;
+}
 
 // Task 16
 const arr16 = [3, 14, 15, 92, "6", "5", "hello", 32];
+const btn16 = document.querySelector(".b-16");
+const out16 = document.querySelector(".out-16");
+
+btn16.onclick = fn16;
+
+function fn16() {
+  const arr16_res = arr16.filter(num => Number.isInteger(num) && num > 14);
+  out16.textContent = arr16_res;
+}
 
 // Task 17
 const arr17 = [
@@ -156,9 +196,35 @@ const arr17 = [
   "Anno 2205",
   "Assassin`s Creed Chronicles",
 ];
+const btn17 = document.querySelector(".b-17");
+const out17 = document.querySelector(".out-17");
+
+btn17.onclick = fn17;
+
+function fn17() {
+  const arr17_res = arr17.map(str => str.toLocaleLowerCase());
+  out17.textContent = arr17_res;
+}
 
 // Task 18
 const arr18 = [3, 14, 15, 92, 7, 32, 59];
+const btn18 = document.querySelector(".b-18");
+const out18 = document.querySelector(".out-18");
+
+btn18.onclick = fn18;
+
+function fn18() {
+  const arr18_res = arr18
+    .map((number, index) => {
+      if (number % 2 === 0) {
+        return index;
+      }
+      return null;
+    })
+    .filter(num => num);
+  // console.log("🚀 ~ fn18 ~ arr18_res:", arr18_res);
+  out18.textContent = arr18_res;
+}
 
 // Task 19
 const arr19 = [
@@ -167,9 +233,34 @@ const arr19 = [
   "Mass Effect: Andromeda",
   "Far Cry Primal",
 ];
+const btn19 = document.querySelector(".b-19");
+const out19 = document.querySelector(".out-19");
 
+btn19.onclick = fn19;
+
+function fn19() {
+  arr19.forEach((element, index, array) => {
+    const el = element.toLocaleLowerCase();
+    array[index] = el;
+  });
+  console.log("🚀 ~ arr19:", arr19);
+}
+const result = arr19.join(",").toLowerCase().split(",");
+console.log("🚀 ~ result:", result);
 // Task 20
 const arr20 = [2, 13, 14, -7, 9, 5, 0, -2, 14];
+const btn20 = document.querySelector(".b-20");
+const out20 = document.querySelector(".out-20");
+
+btn20.onclick = fn20;
+
+function fn20() {
+  arr20.forEach((number, index, array) => {
+    if (number < 0) array[index] = 0;
+  });
+  // console.log("🚀 ~ arr20:", arr20);
+  out20.textContent = `[${arr20}]`;
+}
 
 // Task 21
 const arr21 = [2, 13, 14, -7, 9, 5, 0, -2, 14];
