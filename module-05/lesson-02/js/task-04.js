@@ -2,13 +2,13 @@
 const product = {
   price: 5000,
   showPrice() {
-    console.log(this.price)
+    console.log(product.price);
   },
-}
+};
 
 function callAction(action) {
-  action()
+  action();
 }
 
 // =====================================================
-callAction(product.showPrice)
+callAction(product.showPrice);
