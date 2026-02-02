@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <script type="module" src="./app.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index.css" />
+    <link rel="stylesheet" crossorigin href="./assets/style.css" />
+  </head>
+  <body class="theme-light">
+    <header class="header">
+      <div class="container header-container">
+        <a href="./index.html"><img src="./assets/logo.svg" alt="Logo" /></a>
+
+        <div class="header-right-side-wrapper">
+          <button id="themeToggle" class="theme-toggle-button">
+            Change Theme
+          </button>
+          <form class="header-form" id="task-form">
+            <input
+              class="header-form-input"
+              type="text"
+              name="taskName"
+              placeholder="Title"
+            />
+            <input
+              class="header-form-input"
+              type="text"
+              name="taskDescription"
+              placeholder="Description"
+            />
+            <button class="header-form-btn" type="submit">Add</button>
+          </form>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="container">
+          <ul class="tasks-list" id="task-list">
+            <!-- <li class="task-list-item">
+              <div>
+                <input type="checkbox" />
+                <button class="task-list-item-btn">Delete</button>
+              </div>
+              <h3 class="complited">Заголовок</h3>
+              <p class="complited">Текст</p>
+            </li>
+            <li class="task-list-item">
+              <button class="task-list-item-btn">Delete</button>
+              <h3>Заголовок</h3>
+              <p>Текст</p>
+            </li>
+            <li class="task-list-item">
+              <button class="task-list-item-btn">Delete</button>
+              <h3>Заголовок</h3>
+              <p>Текст</p>
+            </li>
+            <li class="task-list-item">
+              <button class="task-list-item-btn">Delete</button>
+              <h3>Заголовок</h3>
+              <p>Текст</p>
+            </li>
+            <li class="task-list-item">
+              <button class="task-list-item-btn">Delete</button>
+              <h3>Заголовок</h3>
+              <p>Текст</p>
+            </li>
+            <li class="task-list-item">
+              <button class="task-list-item-btn">Delete</button>
+              <h3>Заголовок</h3>
+              <p>Текст</p>
+            </li> -->
+          </ul>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
