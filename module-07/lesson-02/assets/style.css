@@ -5,7 +5,11 @@
     justify-content: center;
     gap: 30px;
   }
-  .complited {
-    text-decoration: line-through;
-  }
+}
+.task-list-item.complited h3 {
+  text-decoration: line-through;
+}
+
+.task-list-item.complited p {
+  text-decoration: line-through;
 }

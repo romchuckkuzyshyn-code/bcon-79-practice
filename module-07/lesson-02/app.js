@@ -1,63 +1,53 @@
 const upForm = document.querySelector(".header-form");
 const addList = document.querySelector(".tasks-list");
-const tasks = [
-  { id: 1, name: "Roman", description: "12435fdszs" },
-  { id: 2, name: "R2an", description: "124dsadszs" },
-];
+const btn = document.querySelector(".task-list-item-btn");
 
-upForm.addEventListener("submit", onHeaderFormSubmit);
-addList.addEventListener("click", onButtonClick);
-addList.addEventListener("click", onButtonClick);
-renderTasks(tasks);
+upForm.addEventListener("submit", inputForm);
+addList.addEventListener("click", removeTask);
+addList.addEventListener("click", checkedTask);
 
-function onHeaderFormSubmit(event) {
+function inputForm(event) {
   event.preventDefault();
-  const taskName = event.target.elements.taskName.value;
-  const taskDescr = event.target.elements.taskDescription.value;
-  const task = { id: Date.now(), name: taskName, description: taskDescr };
-  tasks.push(task);
-  addTask(task);
-}
-function addTask(task) {
-  const taskMarkup = ` <li class="task-list-item">
-  <div>
-                <input type="checkbox" />
-                <button class="task-list-item-btn" id="${task.id}" >Delete</button>
-              </div>
-              <h3>${task.name}</h3>
-              <p>${task.description}</p>
-            </li>`;
-  addList.insertAdjacentHTML("beforeend", taskMarkup);
-}
 
-function deleteTask(tasks, taskId) {
-  const index = tasks.findIndex(task => task.id === taskId);
-  if (index !== -1) {
-    tasks.splice(index, 1);
-  }
-}
-
-function onButtonClick(event) {
-  const clickedEl = event.target;
-  if (clickedEl.nodeName === "BUTTON") {
-    deleteTask(tasks, Number(clickedEl.id));
-
-    renderTasks(tasks);
-  }
-}
-
-function renderTasks(tasks) {
-  addList.innerHTML = "";
-  tasks.map(addTask);
-}
-
-function onButtonClick(event) {
-  if (event.target.nodeName !== "INPUT") {
+  const titleValue = event.target.elements.taskName.value;
+  const descrValue = event.target.elements.taskDescription.value;
+  if (titleValue.trim() === "" || descrValue.trim() === "") {
     return;
   }
-  const itemEl = event.target.closest(".task-list-item");
-  // if (event.target.checked === true) {
-  itemEl.querySelector("h3").classList.toggle("completed");
-  itemEl.querySelector("p").classList.toggle("completed");
-  // }
+  const idTask = Date.now();
+
+  const input = { titleValue, descrValue, idTask };
+
+  addList.insertAdjacentHTML("beforeend", createTask(input));
+  upForm.reset();
+}
+
+function createTask({ titleValue, descrValue, idTask }) {
+  return `<li class="task-list-item" id="${idTask}">
+  <div>
+  <input type="checkbox" />
+  <button class="task-list-item-btn">Delete</button>
+  </div>
+  <h3>${titleValue}</h3>
+  <p>${descrValue}</p>
+  </li>
+  `;
+}
+
+function removeTask(event) {
+  const removeList = event.target;
+  if (removeList.tagName !== "BUTTON") {
+    return;
+  }
+  removeList.closest(".task-list-item").remove();
+}
+
+function checkedTask(event) {
+  const check = event.target;
+  if (check.tagName !== "INPUT") {
+    return;
+  }
+  const changeClass = check.closest(".task-list-item");
+  changeClass.classList.toggle("complited");
+  console.log("🚀 ~ checkedTask ~ changeClass:", changeClass);
 }

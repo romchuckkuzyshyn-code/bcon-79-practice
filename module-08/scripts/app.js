@@ -24,7 +24,6 @@ function createMarkup(posts) {
               class=""
               src="${coverImage}"
               alt="${title}"
-              width="100%"
               height="335"
             />
             <div class="card-body">
