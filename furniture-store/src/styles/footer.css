@@ -1,0 +1,9 @@
+.footer {
+  padding: 24px 0;
+  background: #6b0609;
+}
+.footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
